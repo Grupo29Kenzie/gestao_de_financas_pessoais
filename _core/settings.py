@@ -48,7 +48,13 @@ THIRD_PARTY_APPS = [
     "drf_spectacular",
 ]
 
-MY_APPS = []
+MY_APPS = [
+    "categories",
+    "credit_cards",
+    "expenses_entries",
+    "savings",
+    "users",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
 
