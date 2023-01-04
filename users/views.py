@@ -1,5 +1,14 @@
-from django.shortcuts import render
+from .models import User
+from .serializers import UserSerializer
+
+from rest_framework import generics
+
+class UserView(generics.ListCreateAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
 
 
-class UserView:
-    ...
+class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+    lookup_url_kwarg = "user_id"
