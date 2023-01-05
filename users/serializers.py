@@ -8,6 +8,9 @@ class UserSerializer(serializers.ModelSerializer):
         actual_balance = 0
         return actual_balance
 
+    def create(self, validated_data: dict) -> User:
+        return User.objects.create_user(**validated_data)
+
     class Meta:
         model = User
         fields = [
@@ -20,3 +23,4 @@ class UserSerializer(serializers.ModelSerializer):
         ]
 
         read_only_fields = ["balance"]
+        extra_kwargs = {'password': {'write_only': True}}
