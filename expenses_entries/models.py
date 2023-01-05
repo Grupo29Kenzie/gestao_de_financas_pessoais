@@ -27,3 +27,6 @@ class ExpenseEntrie(models.Model):
     user = models.ForeignKey(
         "users.User", on_delete=models.CASCADE, related_name="expense_entrie"
     )
+    category = models.ForeignKey(
+        "categories.Category", on_delete=models.CASCADE, related_name="categories"
+    )
