@@ -2,29 +2,8 @@ from rest_framework import serializers
 from .models import ExpenseEntrie, TransactionOption, PaymentOption
 from categories.serializers import CategorySerializer
 from categories.models import Category
-from ipdb import set_trace
 
-# class ExpenseEntrieSerializer(serializers.ModelSerializer):
-#     def create(self, validated_data):
-#         return ExpenseEntrie.objects.create(**validated_data)
 
-#     class Meta:
-#         model = ExpenseEntrie
-#         fields = [
-#             "id",
-#             "name",
-#             "created_at",
-#             "expiration",
-#             "value",
-#             "transaction",
-#             "payment",
-#             "is_paid",
-#             "user_id",
-#             "category"
-#         ]
-
-#         read_only_fields = ["id", "created_at"]
-    
 class ExpenseEntrieSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=50)
