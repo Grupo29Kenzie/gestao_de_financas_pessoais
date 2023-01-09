@@ -3,14 +3,12 @@ from .serializers import UserSerializer
 
 from rest_framework import generics
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from users.permissions import IsAuthenticated, IsAccountOwner
+from users.permissions import IsAuthenticated, RoutePermission, IsAccountOwner
+
 
 class UserView(generics.ListCreateAPIView):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated, IsAccountOwner]
-    
-    def get_queryset(self):
-        return User.objects.filter(id=self.request.user.id)
+    permission_classes = [RoutePermission]
 
     serializer_class = UserSerializer
     queryset = User.objects.all()
