@@ -25,8 +25,13 @@ class ExpenseEntrie(models.Model):
     value = models.FloatField()
     is_paid = models.BooleanField(default=False)
     user = models.ForeignKey(
-        "users.User", on_delete=models.CASCADE, related_name="expense_entrie"
+        "users.User",
+        on_delete=models.CASCADE,
+        related_name="expense_entrie",
     )
     category = models.ForeignKey(
-        "categories.Category", on_delete=models.CASCADE, related_name="categories"
+        "categories.Category",
+        on_delete=models.CASCADE,
+        related_name="expense_entrie",
+        null=True
     )
