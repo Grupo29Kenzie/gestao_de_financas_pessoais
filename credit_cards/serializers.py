@@ -13,7 +13,6 @@ class CreditCardSerializer(serializers.ModelSerializer):
             "due_date",
             "closing_day",
             "limit",
-            "transactions",
             "is_paid",
             "value",
         ]

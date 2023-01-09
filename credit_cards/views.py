@@ -15,6 +15,9 @@ class CreditCardView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(user_id=self.request.user.id)
 
+    def get_queryset(self):
+        return Credit_Card.objects.filter(user_id=self.request.user.id)
+
 
 class CreditCardDetailView(generics.RetrieveUpdateDestroyAPIView):
     authentication_classes = [JWTAuthentication]
