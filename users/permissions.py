@@ -3,6 +3,7 @@ from rest_framework.views import Request, View
 from .models import User
 from expenses_entries.models import ExpenseEntrie
 from credit_cards.models import Credit_Card
+from savings.models import Saving
 
 class IsAuthenticated(permissions.BasePermission):
     def has_permission(self, request, view) -> bool:
@@ -19,6 +20,12 @@ class IsAccountOwner(permissions.BasePermission):
 class IsExpenseEntrieOwner(permissions.BasePermission):
     def has_object_permission(self, request, view: View, obj: ExpenseEntrie) -> bool:
         if obj.user_id == request.user.id or request.user.is_superuser == True:
+            return True
+        return False
+
+class IsSavingOwner(permissions.BasePermission):
+    def has_object_permission(self, request, view: View, obj: Saving) -> bool:
+        if obj.id == request.user.id or request.user.is_superuser == True:
             return True
         return False
 

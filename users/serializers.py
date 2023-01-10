@@ -3,13 +3,15 @@ from .models import User
 from categories.models import Category
 from credit_cards.models import Credit_Card
 from credit_cards.serializers import CreditCardSerializer
-
+from savings.serializers import SavingSerializer
+from savings.models import Saving
 
 class UserSerializer(serializers.ModelSerializer):
     balance = serializers.SerializerMethodField()
     expenses = serializers.SerializerMethodField()
     entries = serializers.SerializerMethodField()
     cards = serializers.SerializerMethodField()
+    saving = SavingSerializer()
 
     def get_balance(self, obj: User):
         actual_balance = obj.balance
@@ -64,8 +66,12 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data: dict) -> User:
         if validated_data.get("admin", False):
-            return User.objects.create_superuser(**validated_data)
-        return User.objects.create_user(**validated_data)
+            saving_data = validated_data.pop("saving")
+            saving_obj, _ = Saving.objects.get_or_create(**saving_data)
+            return User.objects.create_superuser(saving=saving_obj,**validated_data)
+        saving_data = validated_data.pop("saving")
+        saving_obj, _ = Saving.objects.get_or_create(**saving_data)
+        return User.objects.create_user(saving=saving_obj,**validated_data)
 
     def update(self, instance: User, validated_data: dict) -> User:
         for key, value in validated_data.items():
@@ -108,6 +114,6 @@ class UserSerializer(serializers.ModelSerializer):
             "entries",
             "expense_entrie",
             "credit_cards",
-            "is_superuser"
+            "is_superuser",
         ]
         extra_kwargs = {"password": {"write_only": True}}
