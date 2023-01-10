@@ -4,6 +4,7 @@ from categories.serializers import CategorySerializer
 from categories.models import Category
 
 
+
 class ExpenseEntrieSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=50)
@@ -26,4 +27,16 @@ class ExpenseEntrieSerializer(serializers.Serializer):
         category_obj, _ = Category.objects.get_or_create(**category_data)
         expense_entrie = ExpenseEntrie.objects.create(category=category_obj, **validated_data)
         return expense_entrie
+
+    def update(self, instance, validated_data):
+        category_dict = validated_data.pop("category", None)
+        
+        for key, value in validated_data.items():
+            setattr(instance, key, value)
+
+        if category_dict:
+            category, _ = Category.objects.get_or_create(**category_dict)
+            instance.category = category
+        instance.save()
+        return instance
     

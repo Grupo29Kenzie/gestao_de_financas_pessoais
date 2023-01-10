@@ -9,6 +9,10 @@ class SavingSerializer(serializers.ModelSerializer):
     def get_user_id(self, obj: User):
         return obj.user.id
         
+    def update(self, instance, validated_data):
+        for key, value in validated_data.items():
+            setattr(instance, key, value)
+        return instance
 
     class Meta:
         model = Saving
