@@ -10,10 +10,10 @@ class CreditCardSerializer(serializers.ModelSerializer):
         model = Credit_Card
         fields = [
             "id",
+            "name",
             "due_date",
             "closing_day",
             "limit",
-            "transactions",
             "is_paid",
             "value",
         ]
