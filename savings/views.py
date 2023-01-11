@@ -18,6 +18,12 @@ class SavingView(generics.ListAPIView):
 
     queryset = Saving.objects.all()
 
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Saving.objects.all()
+        else:
+            return Saving.objects.filter(user=self.request.user.id)
+
 
 class SavingDetailView(generics.RetrieveUpdateDestroyAPIView):
     authentication_classes = [JWTAuthentication]

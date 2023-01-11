@@ -8,13 +8,19 @@ from users.permissions import IsCreditCardOwner, RoutePermission
 
 class CreditCardView(generics.ListCreateAPIView):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated,RoutePermission]
+    permission_classes = [IsAuthenticated]
 
     serializer_class = CreditCardSerializer
     queryset = Credit_Card.objects.all()
 
     def perform_create(self, serializer):
         serializer.save(user_id=self.request.user.id)
+
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Credit_Card.objects.all()
+        else:
+            return Credit_Card.objects.filter(user_id=self.request.user.id)
 
 
 

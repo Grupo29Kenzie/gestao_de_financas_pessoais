@@ -11,12 +11,18 @@ class UserSerializer(serializers.ModelSerializer):
     expenses = serializers.SerializerMethodField()
     entries = serializers.SerializerMethodField()
     cards = serializers.SerializerMethodField()
+    saving = serializers.SerializerMethodField()
+
+    def get_saving(self, obj:User):
+        savings_queryset = obj.saving.value
+        return savings_queryset
+
 
     def get_balance(self, obj: User):
         actual_balance = obj.balance
         expenses_entries = obj.expense_entrie.all()
         for item in expenses_entries:
-            if not item.is_paid:
+            if item.is_paid:
                 if item.transaction == "EXPENSE":
                     actual_balance -= item.value
                 else:
