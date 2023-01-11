@@ -4,11 +4,11 @@ from users.models import User
 
 
 class SavingSerializer(serializers.ModelSerializer):
-    user_id = serializers.SerializerMethodField()
+    owner_id = serializers.SerializerMethodField(read_only=True)
 
-    def get_user_id(self, obj: User):
-        return obj.user.id
-        
+    def get_owner_id(self, obj: User):
+        return obj.id
+
     def update(self, instance, validated_data):
         for key, value in validated_data.items():
             setattr(instance, key, value)
@@ -16,10 +16,6 @@ class SavingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Saving
-        fields = [
-            "id",
-            "value",
-            "user_id"
-        ]
+        fields = ["id", "value", "owner_id"]
 
-        read_only_fields = ['user_id']
+        # read_only_fields = ["user_id"]
