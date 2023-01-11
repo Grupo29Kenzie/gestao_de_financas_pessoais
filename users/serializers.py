@@ -16,7 +16,7 @@ class UserSerializer(serializers.ModelSerializer):
         actual_balance = obj.balance
         expenses_entries = obj.expense_entrie.all()
         for item in expenses_entries:
-            if item.is_paid:
+            if not item.is_paid:
                 if item.transaction == "EXPENSE":
                     actual_balance -= item.value
                 else:
@@ -57,16 +57,6 @@ class UserSerializer(serializers.ModelSerializer):
     def get_cards(self, obj: User):
         cards_queryset = obj.credit_cards.all().values()
         return cards_queryset
-
-    # def create(self, validated_data: dict) -> User:
-    #     if validated_data.get("admin", False):
-    #         saving_data = validated_data.pop("saving")
-
-    #         saving_obj, _ = Saving.objects.get_or_create(**saving_data)
-    #         return User.objects.create_superuser(saving=saving_obj, **validated_data)
-    #     saving_data = validated_data.pop("saving")
-    #     saving_obj, _ = Saving.objects.get_or_create(**saving_data)
-    #     return User.objects.create_user(saving=saving_obj, **validated_data)
 
     def update(self, instance: User, validated_data: dict) -> User:
         for key, value in validated_data.items():

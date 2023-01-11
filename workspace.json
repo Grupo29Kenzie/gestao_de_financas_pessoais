@@ -1,0 +1,1410 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-01-11T18:32:48.314Z",
+  "__export_source": "insomnia.desktop.app:v2022.5.1",
+  "resources": [
+    {
+      "_id": "req_07ca5c9752e34ced8117897cb5aa618a",
+      "parentId": "fld_66f1248353c945ecb52ac2e186f7f025",
+      "modified": 1673460985981,
+      "created": 1672876512247,
+      "url": "{{ _.servidor }}/saving/",
+      "name": "criar",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\t\t\t\"name\":\"BB\",\n\t\t\t\t\"due_date\": \"20\",\n        \"closing_day\":\"20\",\n        \"limit\":\"1500\",\n        \"is_paid\": false,\n        \"value\": \"500\"\n\t\t\t\t\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_534fbf00b23740e085180d3377a46ca3"
+        },
+        {
+          "id": "pair_a126139a7ebf49c09754197500498bef",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_e664a2e0b5b8414bb571b27805860cbc",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_6f3b78c37924446f8aa13ec05f4bd950",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNDExNTIyLCJpYXQiOjE2NzMzOTM1MjIsImp0aSI6ImY5YzFiNjhhNTJiNzQxZDU4ZWE2MmUxOTkyODAwMWUzIiwidXNlcl9pZCI6MTB9.5Yt8BelRF3waxO2-0HvOe0w2fPfFG3RoQd1Rek1VUBg",
+        "disabled": true
+      },
+      "metaSortKey": -1672282798682.125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_66f1248353c945ecb52ac2e186f7f025",
+      "parentId": "wrk_22155642d8dc418689535e890e95e358",
+      "modified": 1672876495047,
+      "created": 1672876495047,
+      "name": "Credit Card",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1672876495047,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_22155642d8dc418689535e890e95e358",
+      "parentId": null,
+      "modified": 1672869274496,
+      "created": 1672869274496,
+      "name": "Gestão_financas",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_bc60370d9dac46b08734cf41a4688363",
+      "parentId": "fld_66f1248353c945ecb52ac2e186f7f025",
+      "modified": 1673397429208,
+      "created": 1672877690777,
+      "url": "{{ _.servidor }}/credit_cards/",
+      "name": "listar",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": ""
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_9c8c641f2a7f40ddac52c671364701cb",
+          "disabled": false
+        },
+        {
+          "id": "pair_1c3ea948c8e74803981f8c903c51eed0",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_6dba399ff04941c7994f8a6cd162a5b7",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_fb8bf4ec06c04d818a8c3e52764b22c9",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNDEwNzc2LCJpYXQiOjE2NzMzOTI3NzYsImp0aSI6ImM3YzRiZjRkNDAwZTRhMjI4NmJjMzA3M2I5NzhlNDViIiwidXNlcl9pZCI6MTB9.g98m2tuzAGzHZG9r-U4pGLb81J7-Mtf6DJPzqlxRiiw",
+        "disabled": true
+      },
+      "metaSortKey": -1671989513099.1875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_ac073e7c78734f7a9c37af5732ab496b",
+      "parentId": "fld_66f1248353c945ecb52ac2e186f7f025",
+      "modified": 1673395487849,
+      "created": 1672939429770,
+      "url": "http://127.0.0.1:8000/api/credit_cards/11/",
+      "name": "listar um id",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": ""
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_f110bc1e191a4f50b5c1e57a2f89b3a5"
+        },
+        {
+          "id": "pair_14c13fb32c854c51989a5a7060f37380",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_1bc5f1bac9de4f859bcf999a5c2394f9",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_05db1e5a494943808c2a9fbe9ec9e0ea",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNDExNTIyLCJpYXQiOjE2NzMzOTM1MjIsImp0aSI6ImY5YzFiNjhhNTJiNzQxZDU4ZWE2MmUxOTkyODAwMWUzIiwidXNlcl9pZCI6MTB9.5Yt8BelRF3waxO2-0HvOe0w2fPfFG3RoQd1Rek1VUBg",
+        "disabled": true
+      },
+      "metaSortKey": -1671842870307.7188,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_bfea9653275841a8842bace6fcea8908",
+      "parentId": "fld_66f1248353c945ecb52ac2e186f7f025",
+      "modified": 1673395767161,
+      "created": 1672940577772,
+      "url": "{{ _.servidor }}/credit_cards/11/",
+      "name": "deletar",
+      "description": "",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": ""
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_716fe793807f4c27a02fd7fa866c3917"
+        },
+        {
+          "id": "pair_e9130441733748a28789cec176d2deaf",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_fa2b15e2fcc94d72922048f496ade5d4",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_fa94c72287414d3a8123604450c50aca",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNDExNTIyLCJpYXQiOjE2NzMzOTM1MjIsImp0aSI6ImY5YzFiNjhhNTJiNzQxZDU4ZWE2MmUxOTkyODAwMWUzIiwidXNlcl9pZCI6MTB9.5Yt8BelRF3waxO2-0HvOe0w2fPfFG3RoQd1Rek1VUBg",
+        "disabled": true
+      },
+      "metaSortKey": -1671806209609.8516,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1e055cf97ddb469889aed9508beb7515",
+      "parentId": "fld_66f1248353c945ecb52ac2e186f7f025",
+      "modified": 1673395903220,
+      "created": 1672940486447,
+      "url": "{{ _.servidor }}/credit_cards/2/",
+      "name": "alterar",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n        \"limit\":\"1000\",\n        \"is_paid\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_c1da3e327dfd4487ab1ea975d25458d3"
+        },
+        {
+          "id": "pair_cadcbebb2c144771b6b79ddad1a0241f",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_ea7c57b0eef44089ab3225e9d52da55d",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_b6a0022db00a4c7a9f2a2430a4ae886b",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNDExNTIyLCJpYXQiOjE2NzMzOTM1MjIsImp0aSI6ImY5YzFiNjhhNTJiNzQxZDU4ZWE2MmUxOTkyODAwMWUzIiwidXNlcl9pZCI6MTB9.5Yt8BelRF3waxO2-0HvOe0w2fPfFG3RoQd1Rek1VUBg",
+        "disabled": true
+      },
+      "metaSortKey": -1671769548911.9844,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_a29cffe27e764c0d947bca4dbad257c5",
+      "parentId": "fld_e019b023f275466a9104125a8da668ac",
+      "modified": 1673461708785,
+      "created": 1673460971983,
+      "url": "{{ _.servidor }}/savings/",
+      "name": "listar",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_1c3ea948c8e74803981f8c903c51eed0",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_6dba399ff04941c7994f8a6cd162a5b7",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_fb8bf4ec06c04d818a8c3e52764b22c9",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNDEwNzc2LCJpYXQiOjE2NzMzOTI3NzYsImp0aSI6ImM3YzRiZjRkNDAwZTRhMjI4NmJjMzA3M2I5NzhlNDViIiwidXNlcl9pZCI6MTB9.g98m2tuzAGzHZG9r-U4pGLb81J7-Mtf6DJPzqlxRiiw",
+        "disabled": true
+      },
+      "metaSortKey": -1671989513099.1875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_e019b023f275466a9104125a8da668ac",
+      "parentId": "wrk_22155642d8dc418689535e890e95e358",
+      "modified": 1673460971941,
+      "created": 1673460971941,
+      "name": "Saving",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1672876495034.5,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_f7dc5739ecb14beb94f6f18978feb44f",
+      "parentId": "fld_e019b023f275466a9104125a8da668ac",
+      "modified": 1673461469425,
+      "created": 1673460972005,
+      "url": "http://127.0.0.1:8000/api/savings/8/",
+      "name": "listar um id",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": ""
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_f110bc1e191a4f50b5c1e57a2f89b3a5"
+        },
+        {
+          "id": "pair_14c13fb32c854c51989a5a7060f37380",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_1bc5f1bac9de4f859bcf999a5c2394f9",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_05db1e5a494943808c2a9fbe9ec9e0ea",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNDExNTIyLCJpYXQiOjE2NzMzOTM1MjIsImp0aSI6ImY5YzFiNjhhNTJiNzQxZDU4ZWE2MmUxOTkyODAwMWUzIiwidXNlcl9pZCI6MTB9.5Yt8BelRF3waxO2-0HvOe0w2fPfFG3RoQd1Rek1VUBg",
+        "disabled": true
+      },
+      "metaSortKey": -1671842870307.7188,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_611208cea00b418798e0dc3d3aac95dd",
+      "parentId": "fld_e019b023f275466a9104125a8da668ac",
+      "modified": 1673461003152,
+      "created": 1673460972040,
+      "url": "{{ _.servidor }}/saving/11/",
+      "name": "deletar",
+      "description": "",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": ""
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_716fe793807f4c27a02fd7fa866c3917"
+        },
+        {
+          "id": "pair_e9130441733748a28789cec176d2deaf",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_fa2b15e2fcc94d72922048f496ade5d4",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_fa94c72287414d3a8123604450c50aca",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNDExNTIyLCJpYXQiOjE2NzMzOTM1MjIsImp0aSI6ImY5YzFiNjhhNTJiNzQxZDU4ZWE2MmUxOTkyODAwMWUzIiwidXNlcl9pZCI6MTB9.5Yt8BelRF3waxO2-0HvOe0w2fPfFG3RoQd1Rek1VUBg",
+        "disabled": true
+      },
+      "metaSortKey": -1671806209609.8516,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b6e7b1dfba344e1196a4ba63471a0aca",
+      "parentId": "fld_e019b023f275466a9104125a8da668ac",
+      "modified": 1673461007753,
+      "created": 1673460972017,
+      "url": "{{ _.servidor }}/saving/2/",
+      "name": "alterar",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n        \"limit\":\"1000\",\n        \"is_paid\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_c1da3e327dfd4487ab1ea975d25458d3"
+        },
+        {
+          "id": "pair_cadcbebb2c144771b6b79ddad1a0241f",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_ea7c57b0eef44089ab3225e9d52da55d",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_b6a0022db00a4c7a9f2a2430a4ae886b",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNDExNTIyLCJpYXQiOjE2NzMzOTM1MjIsImp0aSI6ImY5YzFiNjhhNTJiNzQxZDU4ZWE2MmUxOTkyODAwMWUzIiwidXNlcl9pZCI6MTB9.5Yt8BelRF3waxO2-0HvOe0w2fPfFG3RoQd1Rek1VUBg",
+        "disabled": true
+      },
+      "metaSortKey": -1671769548911.9844,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8e932cd0ff28458298adbdc5534b7497",
+      "parentId": "fld_b379116362a0432a97baacf95c275426",
+      "modified": 1673461167562,
+      "created": 1673392236306,
+      "url": "{{ _.servidor }}/expenses_entries/",
+      "name": "criar expense 1",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\":\"Conta de Luz\",\n\t\"expiration\":\"2023-01-30\",\n\t\"value\": \"200\",\n\t\"transaction\":\"EXPENSE\",\n\t\"category\":{\"name\":\"Moradia\"}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_3ff9c340213140858a692d343c5e0f01",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_b0cb64ded0c74d4f9b01c9b16bfb8c6f",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_275fc741098446d297fb508f87eb1f75",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_c0ddc1df13f240cba58f94b21029e142",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "",
+        "disabled": true
+      },
+      "metaSortKey": -1672282798682.125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_b379116362a0432a97baacf95c275426",
+      "parentId": "wrk_22155642d8dc418689535e890e95e358",
+      "modified": 1673392236302,
+      "created": 1673392236302,
+      "name": "Expenses_Entries",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1672876495022,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_778a8fa01a4f4d38ad5d70a6faea85f1",
+      "parentId": "fld_b379116362a0432a97baacf95c275426",
+      "modified": 1673451223592,
+      "created": 1673448617598,
+      "url": "{{ _.servidor }}/expenses_entries/",
+      "name": "criar expense 2",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\":\"Consulta médica\",\n\t\"expiration\":\"2023-01-30\",\n\t\"value\": \"200\",\n\t\"transaction\":\"EXPENSE\",\n\t\"category\":{\"name\":\"Saude\"}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_3ff9c340213140858a692d343c5e0f01",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_b0cb64ded0c74d4f9b01c9b16bfb8c6f",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_275fc741098446d297fb508f87eb1f75",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_d642c3fbca554b6495ee73e93526017b"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "",
+        "disabled": true
+      },
+      "metaSortKey": -1672136155890.6562,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f78217c27cbd4e22836c04114a3f42a2",
+      "parentId": "fld_b379116362a0432a97baacf95c275426",
+      "modified": 1673460498164,
+      "created": 1673448725454,
+      "url": "{{ _.servidor }}/expenses_entries/",
+      "name": "criar entrie 1",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\":\"Pagamento\",\n\t\"expiration\":\"2023-01-01\",\n\t\"value\": \"2000\",\n\t\"transaction\":\"ENTRIE\",\n\t\"category\":{\"name\":\"Salário\"}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_3ff9c340213140858a692d343c5e0f01",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_b0cb64ded0c74d4f9b01c9b16bfb8c6f",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_275fc741098446d297fb508f87eb1f75",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_d642c3fbca554b6495ee73e93526017b"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "",
+        "disabled": true
+      },
+      "metaSortKey": -1672062834494.9219,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_69ea016378844235b135f44339a6d6b0",
+      "parentId": "fld_b379116362a0432a97baacf95c275426",
+      "modified": 1673448896938,
+      "created": 1673448840590,
+      "url": "{{ _.servidor }}/expenses_entries/",
+      "name": "criar entrie 2",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\":\"Aluguel casa 1\",\n\t\"expiration\":\"2023-01-01\",\n\t\"value\": \"2000\",\n\t\"transaction\":\"ENTRIE\",\n\t\"category\":{\"name\":\"Aluguel\"}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_3ff9c340213140858a692d343c5e0f01",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_b0cb64ded0c74d4f9b01c9b16bfb8c6f",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_275fc741098446d297fb508f87eb1f75",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_d642c3fbca554b6495ee73e93526017b"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "",
+        "disabled": true
+      },
+      "metaSortKey": -1672026173797.0547,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_df10d298eb244d7d900b05a477db2ab4",
+      "parentId": "fld_b379116362a0432a97baacf95c275426",
+      "modified": 1673460774954,
+      "created": 1673392236313,
+      "url": "{{ _.servidor }}/expenses_entries/",
+      "name": "listar",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_62ce030434b149a9ba302e30c3044988",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_048c19684af0465a9272b4b145daf0e1",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_a9ad2f932f28416994f9b5596706921e",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }} ",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "",
+        "disabled": true
+      },
+      "metaSortKey": -1671989513099.1875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_318fcde8234b473bb247612dfd881e26",
+      "parentId": "fld_b379116362a0432a97baacf95c275426",
+      "modified": 1673460869469,
+      "created": 1673392236318,
+      "url": "{{ _.servidor }}/expenses_entries/5/",
+      "name": "listar um id",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": ""
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bb494da4e3f0496c91a38a997a9e90c1"
+        },
+        {
+          "id": "pair_cf36db4997e240d4b4663d47c4a03b19",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_3c14b41204e64dfb98927f7d97ee261b",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_b87591990035433bb296395cb02c80c5",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "",
+        "disabled": true
+      },
+      "metaSortKey": -1671842870307.7188,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_0fe7981ff438445fa56118dab188edfe",
+      "parentId": "fld_b379116362a0432a97baacf95c275426",
+      "modified": 1673460642857,
+      "created": 1673392236332,
+      "url": "{{ _.servidor }}/expenses_entries/7/",
+      "name": "deletar",
+      "description": "",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": ""
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_df7f82b801e240b5b4c1074f1c722f17"
+        },
+        {
+          "id": "pair_b8df6e0d6b4b4035b3a3b31176c91bf2",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": ""
+        },
+        {
+          "id": "pair_45087efda1ba4e5a99d457b4ded1a351",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_8593d0202dd14b8888ff52cdd198d7dc",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "disabled": true
+      },
+      "metaSortKey": -1671806209609.8516,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_903d83091a4a40b99a68dece08bbf5ec",
+      "parentId": "fld_b379116362a0432a97baacf95c275426",
+      "modified": 1673460690952,
+      "created": 1673392236325,
+      "url": "{{ _.servidor }}/expenses_entries/6/",
+      "name": "alterar",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n      \"name\": \"Farmacia user normal\",\n      \"expiration\": \"2023-01-11\",\n\t\t\t\"value\": 2000\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_960887b117114dbd906119f6c75f3c73"
+        },
+        {
+          "id": "pair_4a436df195ed4179be0d08384318028a",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_e1599638853744d9a15d012497c20eea",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_3b7f9725f2eb4f94a67a2dd51f35cee0",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "",
+        "disabled": true
+      },
+      "metaSortKey": -1671769548911.9844,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_0778166313444e61bb225f91a3421e43",
+      "parentId": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "modified": 1673460111827,
+      "created": 1673454397342,
+      "url": "{{ _.servidor }}/users/11/",
+      "name": "Delete superuser",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_b8f2e76b56c644c1b840dbf193c34092', 'b64::JC5hY2Nlc3M=::46b', 'never', 60 %}"
+      },
+      "metaSortKey": -1673454397342,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "parentId": "wrk_22155642d8dc418689535e890e95e358",
+      "modified": 1673391756222,
+      "created": 1672869369898,
+      "name": "User",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1672876494997,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_6ea4c0d63a124e59900555a0731f3174",
+      "parentId": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "modified": 1673460536780,
+      "created": 1673459471028,
+      "url": "{{ _.servidor }}/users/13/",
+      "name": "Update superuser",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"Joao\",\n  \"email\": \"joao@mail.com\",\n  \"cpf\": \"11023776979\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_7ee233611d9b4651b97d86a51b167db8"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_b8f2e76b56c644c1b840dbf193c34092', 'b64::JC5hY2Nlc3M=::46b', 'never', 60 %}"
+      },
+      "metaSortKey": -1673376762521,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_41378770b4ce4e5d97ca87d1d3e3ec87",
+      "parentId": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "modified": 1673459338534,
+      "created": 1673454651272,
+      "url": "{{ _.servidor }}/users/10/",
+      "name": "Delete user",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_107888d1462840eea16364cc798ffb1e', 'b64::JC5hY2Nlc3M=::46b', 'never', 60 %}"
+      },
+      "metaSortKey": -1673299127700,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_fca8d3a12f35424a9755c47271facc95",
+      "parentId": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "modified": 1673460901012,
+      "created": 1672869375076,
+      "url": "{{ _.servidor }}/users/",
+      "name": "criar user",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"Bianca\",\n  \"email\": \"bianca@mailaa.com\",\n  \"cpf\": \"0012374691\",\n  \"password\": \"1234\",\n\t\"admin\": false,\n\t\"balance\":0,\n\t\"saving\":{\"value\":10}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_8df8ba36215b45c28934f6e118a742b4"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1672869369848,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e9ad2c4b42b1445b8ec388225c21fc07",
+      "parentId": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "modified": 1673460904738,
+      "created": 1673447201989,
+      "url": "{{ _.servidor }}/users/",
+      "name": "criar user ja existente",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"Bianca\",\n  \"email\": \"bianca@mail.com\",\n  \"cpf\": \"00123746996\",\n  \"password\": \"1234\",\n\t\"admin\": false,\n\t\"balance\":0\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_8df8ba36215b45c28934f6e118a742b4"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1672867511653.125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_01f0ab766cc847f7991ca9f167b209f5",
+      "parentId": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "modified": 1673461279160,
+      "created": 1673447113726,
+      "url": "{{ _.servidor }}/users/",
+      "name": "criar superuser",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"Pedro\",\n  \"email\": \"pedro@mail.com\",\n  \"cpf\": \"11123746998\",\n  \"password\": \"1234\",\n\t\"admin\": true,\n\t\"balance\":0,\n\t\"saving\":{\"value\":200}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_8df8ba36215b45c28934f6e118a742b4"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1672865653458.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b8f2e76b56c644c1b840dbf193c34092",
+      "parentId": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "modified": 1673461301759,
+      "created": 1672916567129,
+      "url": "{{ _.servidor }}/users/login/",
+      "name": "login superuser",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"Pedro\",\n  \"password\": \"1234\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_85c44fa6f38849c38df0db592ba2ce79",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1672576084265.0625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_107888d1462840eea16364cc798ffb1e",
+      "parentId": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "modified": 1673460142913,
+      "created": 1673380817241,
+      "url": "{{ _.servidor }}/users/login/",
+      "name": "login user normal",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"Bianca\",\n  \"password\": \"1234\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_85c44fa6f38849c38df0db592ba2ce79",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1672429441473.5938,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_87b22dfd67c54dd686fc675d970effa2",
+      "parentId": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "modified": 1673461344566,
+      "created": 1672869918899,
+      "url": "{{ _.servidor }}/users/",
+      "name": "listar usuários",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_bf10c168a1814d0a83437dd61ec7dfbe",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_e4452abce84a482cb6950c843e39317e",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_de47180be9524cfd9c590ddd2402a904",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczMzk4Mjk3LCJpYXQiOjE2NzMzODAyOTcsImp0aSI6ImI3ZDA5ZWQ4ZjNlMTQ0YWY4ZjFlN2JiODg4MzNkZDZlIiwidXNlcl9pZCI6MX0.2k32fsXkbQsyVVpTi8AlM05BWZuKDGty1af-HFTMxkw",
+        "disabled": true
+      },
+      "metaSortKey": -1671696227516.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8ec358dfa87c4fa188519db8dbf24764",
+      "parentId": "fld_da869f7deb86412cb98f785fbe41a4a2",
+      "modified": 1673460630732,
+      "created": 1673460307509,
+      "url": "{{ _.servidor }}/users/12/",
+      "name": "listar usuários por id",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_bf10c168a1814d0a83437dd61ec7dfbe",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_admin }}",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_e4452abce84a482cb6950c843e39317e",
+          "name": "Authorization",
+          "value": "Bearer {{ _.token_normal }}",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_de47180be9524cfd9c590ddd2402a904",
+          "name": "Authorization",
+          "value": "Bearer {{ _.Sem_token }}",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczMzk4Mjk3LCJpYXQiOjE2NzMzODAyOTcsImp0aSI6ImI3ZDA5ZWQ4ZjNlMTQ0YWY4ZjFlN2JiODg4MzNkZDZlIiwidXNlcl9pZCI6MX0.2k32fsXkbQsyVVpTi8AlM05BWZuKDGty1af-HFTMxkw",
+        "disabled": true
+      },
+      "metaSortKey": -1671404771766.125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_4c8a94e2cfa353b74bbb954aa9799b5e3cca6b6e",
+      "parentId": "wrk_22155642d8dc418689535e890e95e358",
+      "modified": 1673394185727,
+      "created": 1672869274505,
+      "name": "Base Environment",
+      "data": {
+        "token_admin": "{% response 'body', 'req_b8f2e76b56c644c1b840dbf193c34092', 'b64::JC5hY2Nlc3M=::46b', 'never', 60 %}",
+        "token_normal": "{% response 'body', 'req_107888d1462840eea16364cc798ffb1e', 'b64::JC5hY2Nlc3M=::46b', 'never', 60 %}",
+        "Sem_token": "",
+        "servidor": "http://127.0.0.1:8000/api"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "token_admin",
+          "token_normal",
+          "Sem_token",
+          "servidor"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1672869274505,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_4c8a94e2cfa353b74bbb954aa9799b5e3cca6b6e",
+      "parentId": "wrk_22155642d8dc418689535e890e95e358",
+      "modified": 1672869274508,
+      "created": 1672869274508,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_7275f178121c42bba4aa6e0bfad6522e",
+      "parentId": "wrk_22155642d8dc418689535e890e95e358",
+      "modified": 1672869274497,
+      "created": 1672869274497,
+      "fileName": "Gestão_financas",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}
