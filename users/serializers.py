@@ -99,21 +99,9 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserCreateSerializer(serializers.ModelSerializer):
-    # balance = serializers.SerializerMethodField()
     expenses = serializers.SerializerMethodField()
     entries = serializers.SerializerMethodField()
     cards = serializers.SerializerMethodField()
-
-    # def get_balance(self, obj: User):
-    #     actual_balance = obj.balance
-    #     expenses_entries = obj.expense_entrie.all()
-    #     for item in expenses_entries:
-    #         if item.is_paid:
-    #             if item.transaction == "EXPENSE":
-    #                 actual_balance -= item.value
-    #             else:
-    #                 actual_balance += item.value
-    #     return actual_balance
 
     def get_expenses(self, obj: User):
         expenses_queryset = obj.expense_entrie.filter(transaction="EXPENSE").all()
