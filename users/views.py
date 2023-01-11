@@ -1,5 +1,5 @@
 from .models import User
-from .serializers import UserSerializer
+from .serializers import UserSerializer, UserCreateSerializer
 
 from rest_framework import generics
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -10,7 +10,7 @@ class UserView(generics.ListCreateAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [RoutePermission]
 
-    serializer_class = UserSerializer
+    serializer_class = UserCreateSerializer
     queryset = User.objects.all()
 
 
