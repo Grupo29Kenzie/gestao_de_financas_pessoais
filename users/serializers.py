@@ -64,9 +64,9 @@ class UserSerializer(serializers.ModelSerializer):
     def update(self, instance: User, validated_data: dict) -> User:
         for key, value in validated_data.items():
             if key == "credit_cards":
-                ...
+                raise ValueError("Este campo deve ser atualizado da rota específica")
             if key == "expense_entrie":
-                ...
+                raise ValueError("Este campo deve ser atualizado da rota específica")
             if key == "password":
                 instance.set_password(value)
             else:
