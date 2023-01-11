@@ -1,6 +1,10 @@
 from rest_framework import serializers
 from .models import User
 from categories.models import Category
+from savings.models import Saving
+from savings.serializers import SavingSerializer
+import ipdb
+
 
 class UserSerializer(serializers.ModelSerializer):
     balance = serializers.SerializerMethodField()
@@ -37,7 +41,7 @@ class UserSerializer(serializers.ModelSerializer):
     def get_entries(self, obj: User):
         entries_queryset = obj.expense_entrie.filter(transaction="ENTRIE").all()
         result = entries_queryset.values()
-        
+
         entries = [
             {
                 "name": entry["name"],
@@ -54,12 +58,15 @@ class UserSerializer(serializers.ModelSerializer):
         cards_queryset = obj.credit_cards.all().values()
         return cards_queryset
 
-    def create(self, validated_data: dict) -> User:
-        user = User.objects.create_user(
-            **validated_data, balance=0
-        )
+    # def create(self, validated_data: dict) -> User:
+    #     if validated_data.get("admin", False):
+    #         saving_data = validated_data.pop("saving")
 
-        return user
+    #         saving_obj, _ = Saving.objects.get_or_create(**saving_data)
+    #         return User.objects.create_superuser(saving=saving_obj, **validated_data)
+    #     saving_data = validated_data.pop("saving")
+    #     saving_obj, _ = Saving.objects.get_or_create(**saving_data)
+    #     return User.objects.create_user(saving=saving_obj, **validated_data)
 
     def update(self, instance: User, validated_data: dict) -> User:
         for key, value in validated_data.items():
@@ -102,6 +109,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
     expenses = serializers.SerializerMethodField()
     entries = serializers.SerializerMethodField()
     cards = serializers.SerializerMethodField()
+    saving = SavingSerializer()
 
     def get_expenses(self, obj: User):
         expenses_queryset = obj.expense_entrie.filter(transaction="EXPENSE").all()
@@ -121,7 +129,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
     def get_entries(self, obj: User):
         entries_queryset = obj.expense_entrie.filter(transaction="ENTRIE").all()
         result = entries_queryset.values()
-        
+
         entries = [
             {
                 "name": entry["name"],
@@ -139,15 +147,13 @@ class UserCreateSerializer(serializers.ModelSerializer):
         return cards_queryset
 
     def create(self, validated_data: dict) -> User:
-
-        balance = validated_data.pop("balance")
-        user = User.objects.create_user(
-            **validated_data,
-            balance=balance,
-            saving= None
-        )
-
-        return user
+        if validated_data.get("admin", False):
+            saving_data = validated_data.pop("saving")
+            saving_obj = Saving.objects.create(**saving_data)
+            return User.objects.create_superuser(saving=saving_obj, **validated_data)
+        saving_data = validated_data.pop("saving")
+        saving_obj = Saving.objects.create(**saving_data)
+        return User.objects.create_user(saving=saving_obj, **validated_data)
 
     class Meta:
         model = User
@@ -162,10 +168,12 @@ class UserCreateSerializer(serializers.ModelSerializer):
             "cards",
             "saving",
             "balance",
+            "is_superuser",
+            "admin",
         ]
         read_only_fields = [
-            "saving",
             "expenses",
             "entries",
+            "is_superuser",
         ]
         extra_kwargs = {"password": {"write_only": True}}
