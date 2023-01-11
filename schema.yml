@@ -1,0 +1,1001 @@
+openapi: 3.0.3
+info:
+  title: Gestão de finanças pessoais
+  version: 1.0.0
+  description: Gerindo finanças,faturas e poupança
+paths:
+  /api/categories/:
+    get:
+      operationId: api_categories_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+          description: ''
+    post:
+      operationId: api_categories_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Category'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Category'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+          description: ''
+  /api/credit_cards/:
+    get:
+      operationId: api_credit_cards_list
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CreditCard'
+          description: ''
+    post:
+      operationId: api_credit_cards_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreditCard'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CreditCard'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CreditCard'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreditCard'
+          description: ''
+  /api/credit_cards/{id}/:
+    get:
+      operationId: api_credit_cards_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreditCard'
+          description: ''
+    put:
+      operationId: api_credit_cards_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreditCard'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CreditCard'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CreditCard'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreditCard'
+          description: ''
+    patch:
+      operationId: api_credit_cards_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCreditCard'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCreditCard'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCreditCard'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreditCard'
+          description: ''
+    delete:
+      operationId: api_credit_cards_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/expenses_entries/:
+    get:
+      operationId: api_expenses_entries_list
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExpenseEntrie'
+          description: ''
+    post:
+      operationId: api_expenses_entries_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExpenseEntrie'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ExpenseEntrie'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ExpenseEntrie'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseEntrie'
+          description: ''
+  /api/expenses_entries/{id}/:
+    get:
+      operationId: api_expenses_entries_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseEntrie'
+          description: ''
+    put:
+      operationId: api_expenses_entries_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExpenseEntrie'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ExpenseEntrie'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ExpenseEntrie'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseEntrie'
+          description: ''
+    patch:
+      operationId: api_expenses_entries_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedExpenseEntrie'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedExpenseEntrie'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedExpenseEntrie'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseEntrie'
+          description: ''
+    delete:
+      operationId: api_expenses_entries_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/savings/:
+    get:
+      operationId: api_savings_list
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Saving'
+          description: ''
+  /api/savings/{saving_id}/:
+    get:
+      operationId: api_savings_retrieve
+      parameters:
+      - in: path
+        name: saving_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Saving'
+          description: ''
+    put:
+      operationId: api_savings_update
+      parameters:
+      - in: path
+        name: saving_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Saving'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Saving'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Saving'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Saving'
+          description: ''
+    patch:
+      operationId: api_savings_partial_update
+      parameters:
+      - in: path
+        name: saving_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedSaving'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedSaving'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedSaving'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Saving'
+          description: ''
+    delete:
+      operationId: api_savings_destroy
+      parameters:
+      - in: path
+        name: saving_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/users/:
+    get:
+      operationId: api_users_list
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserCreate'
+          description: ''
+    post:
+      operationId: api_users_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCreate'
+          description: ''
+  /api/users/{user_id}/:
+    get:
+      operationId: api_users_retrieve
+      parameters:
+      - in: path
+        name: user_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    put:
+      operationId: api_users_update
+      parameters:
+      - in: path
+        name: user_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    patch:
+      operationId: api_users_partial_update
+      parameters:
+      - in: path
+        name: user_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    delete:
+      operationId: api_users_destroy
+      parameters:
+      - in: path
+        name: user_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/users/login/:
+    post:
+      operationId: api_users_login_create
+      description: |-
+        Takes a set of user credentials and returns an access and refresh JSON web
+        token pair to prove the authentication of those credentials.
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenObtainPair'
+          description: ''
+components:
+  schemas:
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 200
+      required:
+      - id
+      - name
+    CreditCard:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 20
+        due_date:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        closing_day:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        limit:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,10}(?:\.\d{0,2})?$
+        is_paid:
+          type: boolean
+        value:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,10}(?:\.\d{0,2})?$
+        user_id:
+          type: integer
+          readOnly: true
+      required:
+      - closing_day
+      - due_date
+      - id
+      - limit
+      - name
+      - user_id
+      - value
+    ExpenseEntrie:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 50
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        expiration:
+          type: string
+          format: date
+        value:
+          type: number
+          format: double
+        transaction:
+          $ref: '#/components/schemas/TransactionEnum'
+        payment:
+          allOf:
+          - $ref: '#/components/schemas/PaymentEnum'
+          default: MONEY
+        is_paid:
+          type: boolean
+          default: false
+        user_id:
+          type: integer
+          readOnly: true
+        category:
+          $ref: '#/components/schemas/Category'
+      required:
+      - category
+      - created_at
+      - expiration
+      - id
+      - name
+      - transaction
+      - user_id
+      - value
+    PatchedCreditCard:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 20
+        due_date:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        closing_day:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        limit:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,10}(?:\.\d{0,2})?$
+        is_paid:
+          type: boolean
+        value:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,10}(?:\.\d{0,2})?$
+        user_id:
+          type: integer
+          readOnly: true
+    PatchedExpenseEntrie:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 50
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        expiration:
+          type: string
+          format: date
+        value:
+          type: number
+          format: double
+        transaction:
+          $ref: '#/components/schemas/TransactionEnum'
+        payment:
+          allOf:
+          - $ref: '#/components/schemas/PaymentEnum'
+          default: MONEY
+        is_paid:
+          type: boolean
+          default: false
+        user_id:
+          type: integer
+          readOnly: true
+        category:
+          $ref: '#/components/schemas/Category'
+    PatchedSaving:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        value:
+          type: number
+          format: double
+        owner_id:
+          type: string
+          readOnly: true
+    PatchedUser:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        username:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        password:
+          type: string
+          writeOnly: true
+          maxLength: 128
+        cpf:
+          type: string
+          maxLength: 11
+        email:
+          type: string
+          format: email
+          maxLength: 30
+        expense_entrie:
+          type: array
+          items:
+            type: integer
+            writeOnly: true
+          writeOnly: true
+        entries:
+          type: string
+          readOnly: true
+        expenses:
+          type: string
+          readOnly: true
+        cards:
+          type: string
+          readOnly: true
+        credit_cards:
+          type: array
+          items:
+            type: integer
+            writeOnly: true
+          writeOnly: true
+        saving:
+          type: string
+          readOnly: true
+        balance:
+          type: string
+          readOnly: true
+    PaymentEnum:
+      enum:
+      - MONEY
+      - CREDIT CARD
+      type: string
+    Saving:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        value:
+          type: number
+          format: double
+        owner_id:
+          type: string
+          readOnly: true
+      required:
+      - id
+      - owner_id
+      - value
+    TokenObtainPair:
+      type: object
+      properties:
+        username:
+          type: string
+          writeOnly: true
+        password:
+          type: string
+          writeOnly: true
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          readOnly: true
+      required:
+      - access
+      - password
+      - refresh
+      - username
+    TransactionEnum:
+      enum:
+      - EXPENSE
+      - ENTRIE
+      type: string
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        username:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        password:
+          type: string
+          writeOnly: true
+          maxLength: 128
+        cpf:
+          type: string
+          maxLength: 11
+        email:
+          type: string
+          format: email
+          maxLength: 30
+        expense_entrie:
+          type: array
+          items:
+            type: integer
+            writeOnly: true
+          writeOnly: true
+        entries:
+          type: string
+          readOnly: true
+        expenses:
+          type: string
+          readOnly: true
+        cards:
+          type: string
+          readOnly: true
+        credit_cards:
+          type: array
+          items:
+            type: integer
+            writeOnly: true
+          writeOnly: true
+        saving:
+          type: string
+          readOnly: true
+        balance:
+          type: string
+          readOnly: true
+      required:
+      - balance
+      - cards
+      - cpf
+      - credit_cards
+      - email
+      - entries
+      - expense_entrie
+      - expenses
+      - id
+      - password
+      - saving
+      - username
+    UserCreate:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        username:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        password:
+          type: string
+          writeOnly: true
+          maxLength: 128
+        cpf:
+          type: string
+          maxLength: 11
+        email:
+          type: string
+          format: email
+          maxLength: 30
+        entries:
+          type: string
+          readOnly: true
+        expenses:
+          type: string
+          readOnly: true
+        cards:
+          type: string
+          readOnly: true
+        saving:
+          $ref: '#/components/schemas/Saving'
+        balance:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        is_superuser:
+          type: boolean
+          readOnly: true
+          title: Superuser status
+          description: Designates that this user has all permissions without explicitly
+            assigning them.
+        admin:
+          type: boolean
+      required:
+      - cards
+      - cpf
+      - email
+      - entries
+      - expenses
+      - id
+      - is_superuser
+      - password
+      - saving
+      - username
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
