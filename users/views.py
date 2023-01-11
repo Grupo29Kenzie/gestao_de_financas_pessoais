@@ -8,10 +8,15 @@ from users.permissions import IsAuthenticated, RoutePermission, IsAccountOwner
 
 class UserView(generics.ListCreateAPIView):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [RoutePermission]
 
     serializer_class = UserCreateSerializer
     queryset = User.objects.all()
+
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return User.objects.all()
+        else:
+            return User.objects.filter(id=self.request.user.id)
 
 
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):

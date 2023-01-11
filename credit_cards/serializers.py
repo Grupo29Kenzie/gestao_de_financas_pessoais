@@ -21,7 +21,7 @@ class CreditCardSerializer(serializers.ModelSerializer):
             "limit",
             "is_paid",
             "value",
-            "user",
+            "user_id",
         ]
 
-    read_only_fields = ["id"]
+    read_only_fields = ["id","user_id"]

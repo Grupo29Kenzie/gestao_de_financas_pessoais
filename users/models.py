@@ -7,3 +7,10 @@ class User(AbstractUser):
     email = models.EmailField(max_length=30, unique=True)
     balance = models.IntegerField(null=True, default=0)
     admin = models.BooleanField(default=False)
+    saving = models.OneToOneField(
+        "savings.Saving",
+        on_delete=models.CASCADE,
+        related_name="user",
+        null=True,
+    )
+
